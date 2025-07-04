@@ -8,11 +8,9 @@ import { Flex,
 import { Link } from 'react-router-dom';
 import { AddIcon } from '@chakra-ui/icons';
 
-
-
 const NavBar = () => {
   console.log("nav bar")
-  const bgColor = useColorModeValue('gray.50', 'gray.900');
+  const bgColor = useColorModeValue('gray.150', 'gray.900');
   const { colorMode, toggleColorMode } = useColorMode()
   return (
       <Box p={4} bg={bgColor}>
