@@ -1,12 +1,65 @@
-# React + Vite
+# 🛒 Xtrex Store – E-Commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
 
-Currently, two official plugins are available:
+**Xtrex Store** is a full-stack e-commerce web application built with modern technologies. It allows users to explore products and enables admins to add products with customizable characteristics.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🌐 Frontend: React (with Vite) + Chakra UI
+- 🔧 Backend: Express.js + Node.js
+- 🗃️ Database: MongoDB
+- 💡 Styling: Chakra UI
+- 📦 State Management: (Basic React state or Context API – update if using Redux)
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 👥 User Features
+
+- View all available products
+- Toggle between Dark and Light mode
+- See product details (title, description, price, category)
+
+### 🔧 Admin Features
+
+- Add new products with:
+  - Title
+  - Description
+  - Price
+  - Category
+  - Custom characteristics
+- View all products
+- (Optional) Edit or Delete products
+
+### 📦 Technologies Used
+
+| Category  | Tech Stack             |
+| --------- | ---------------------- |
+| Frontend  | React (with Vite)      |
+| Styling   | Chakra UI              |
+| Routing   | React Router DOM       |
+| Backend   | Express.js             |
+| Database  | MongoDB + Mongoose     |
+| Icons     | Chakra UI Icons        |
+| Dev Tools | Vite, Nodemon, Postman |
+
+---
+
+## 📁 Folder Structure
+
+```bash
+NewProject/
+├── backend/
+│   ├── models/          # Mongoose models (Product.js)
+│   ├── routes/          # Express routes (index.js)
+│   └── mongo.js         # DB connection
+│
+├── frontend/
+│   ├── src/
+│   │   ├── components/  # Navbar, reusable UI
+│   │   ├── pages/       # Home.jsx, CreateProduct.jsx
+│   │   └── App.jsx      # Main App entry
+│   └── index.html
+│
+├── .gitignore
+├── README.md
+└── package.json
+```
