@@ -1,8 +1,8 @@
-# 🛒 Xtrex Store – E-Commerce Web Application
+# 🛒 FIst Store – E-Commerce Web Application
 
 ## Overview
 
-**Xtrex Store** is a full-stack e-commerce web application built with modern technologies. It allows users to explore products and enables admins to add products with customizable characteristics.
+**Fist Store** is a full-stack e-commerce web application built with modern technologies. It allows users to explore products and enables admins to add products with customizable characteristics.
 
 - 🌐 Frontend: React (with Vite) + Chakra UI
 - 🔧 Backend: Express.js + Node.js
