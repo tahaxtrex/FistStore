@@ -15,8 +15,36 @@ import {
 } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 import { useState  } from 'react'
+import { useProductStore } from '../store/product'
+import { useToast } from '@chakra-ui/react'
 
 const CreatePage = () => {
+
+  const {createProduct} = useProductStore()
+  const toast = useToast();
+  const handleclick = async function(){
+    const promise = createProduct(newProduct);
+
+  const { success, message } = await promise;
+  console.log({ success, message });
+
+    
+  if(!success && message == "Please fill in all fields!"){
+    toast.promise(promise, {
+    success: { status: "error", title: 'Creation failed', description: 'Please fill in all fields!' },
+  });
+  }
+  else if(!success){
+    toast.promise(promise, {
+    success: { status: "error", title: 'Creation failed', description: 'Something went wrong' },
+  });}
+  else{
+    toast.promise(promise, {
+    success: { title: 'Product created', description: 'The product was added!' }
+  });
+  }
+  }
+
   const categories = ['electronics', 'clothing', 'books', 'home', 'kitchen']
   const bgColor = useColorModeValue('gray.50', 'gray.900');
   const [newProduct, setNewProduct] = useState({
@@ -26,9 +54,7 @@ const CreatePage = () => {
     description:"",
     category:"",
   });
-  const createproduct = function(){
-    console.log(newProduct)
-  }
+  
 
   return (
     <>
@@ -103,7 +129,7 @@ const CreatePage = () => {
               <br />
               <Flex align="center" gap={7}>
                 <Button display="block"
-                onClick={createproduct}>Create My Product</Button>
+                onClick={handleclick}>Create My Product</Button>
                 <Link to="/">
                   <Text color="blue.500">Back</Text>
                 </Link>
